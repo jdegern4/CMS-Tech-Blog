@@ -14,7 +14,7 @@
 </form>
 {{/if}}
 
-<h2>{{post.comments.length}} comments</h2>
+<h2>{{post.comments.length}} {{format_plural "comment" post.comments.length}}</h2>
 {{> comments post.comments}}
 
 {{#if loggedIn}}
