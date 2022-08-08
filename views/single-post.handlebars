@@ -1,0 +1,23 @@
+{{> post-info post}}
+<article class="post-content-box">{{post.post_contents}}</article>
+
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body" placeholder="Write a comment..."></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+    <button type="button" class="upvote-btn">upvote</button>
+  </div>
+</form>
+{{/if}}
+
+<h2>{{post.comments.length}} comments</h2>
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/upvote.js"></script>
+{{/if}}
